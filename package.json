@@ -1,0 +1,25 @@
+{
+  "name": "hikaru-generator-search",
+  "version": "1.0.0",
+  "description": "Search generator plugin for Hikaru.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlynxZhou/hikaru-generator-search.git"
+  },
+  "keywords": [
+    "Hikaru",
+    "Plugin",
+    "Generator",
+    "Search"
+  ],
+  "author": "AlynxZhou <alynx.zhou@gmail.com> (https://alynx.xyz/)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/AlynxZhou/hikaru-generator-search/issues"
+  },
+  "homepage": "https://github.com/AlynxZhou/hikaru-generator-search#readme"
+}
