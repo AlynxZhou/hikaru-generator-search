@@ -2,12 +2,12 @@ module.exports = (hikaru) => {
 	const {getPathFn} = hikaru.utils
 	const {File} = hikaru.types
 	hikaru.generator.register('afterProcessing', (site) => {
-		if (!site.get('siteConfig')['search']['enable']) {
+		if (!site['siteConfig']['search']['enable']) {
 			return site
 		}
 		const search = []
-		const all = site.get('pages').concat(site.get('posts'))
-		const getPath = getPathFn(site.get('siteConfig')['rootDir'])
+		const all = site['pages'].concat(site['posts'])
+		const getPath = getPathFn(site['siteConfig']['rootDir'])
 		for (let p of all) {
 			search.push({
 				'title': `${p['title']}`,
@@ -15,8 +15,8 @@ module.exports = (hikaru) => {
 				'content': p['text']
 			})
 		}
-		const file = new File(site.get('docDir'))
-    file['docPath'] = site.get('siteConfig')['search']['path'] || 'search.json'
+		const file = new File(site['siteConfig']['docDir'])
+    file['docPath'] = site['siteConfig']['search']['path'] || 'search.json'
     file['content'] = JSON.stringify(search)
     site.put('files', file)
     return site
