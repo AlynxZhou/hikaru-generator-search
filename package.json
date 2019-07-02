@@ -1,6 +1,6 @@
 {
   "name": "hikaru-generator-search",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Search generator plugin for Hikaru.",
   "main": "index.js",
   "scripts": {
