@@ -1,7 +1,7 @@
 module.exports = (hikaru) => {
 	const {getPathFn} = hikaru.utils
 	const {File} = hikaru.types
-	hikaru.generator.register('afterProcessing', (site) => {
+	hikaru.generator.register('searching index json', (site) => {
 		if (!site['siteConfig']['search']['enable']) {
 			return site
 		}
