@@ -15,10 +15,10 @@ module.exports = (hikaru) => {
 				'content': p['text']
 			})
 		}
-		const file = new File(site['siteConfig']['docDir'])
-    file['docPath'] = site['siteConfig']['search']['path'] || 'search.json'
-    file['content'] = JSON.stringify(search)
-    site.put('files', file)
-    return site
+		return new File({
+			'docDir': site['siteConfig']['docDir'],
+			'docPath': site['siteConfig']['search']['path'] || 'search.json',
+			'content': JSON.stringify(search)
+		})
 	})
 }
