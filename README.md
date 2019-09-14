@@ -12,6 +12,7 @@ First go to your site dir and add following to your `config.yml`.
 search:
   enable: true
   path: search.json
+  page: search.html
 ```
 
 then run this command to install it.

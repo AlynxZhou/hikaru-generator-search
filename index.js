@@ -1,9 +1,20 @@
 module.exports = (hikaru) => {
 	const {getPathFn} = hikaru.utils
 	const {File} = hikaru.types
+	hikaru.generator.register("searching result page", (site) => {
+		if (!site['siteConfig']['search']['enable']) {
+			return
+		}
+		return new File({
+			'docDir': site['siteConfig']['docDir'],
+			'docPath': site['siteConfig']['search']['page'] || 'search.html',
+			'title': 'search',
+			'layout': 'search'
+		})
+	})
 	hikaru.generator.register('searching index json', (site) => {
 		if (!site['siteConfig']['search']['enable']) {
-			return site
+			return
 		}
 		const search = []
 		const all = site['pages'].concat(site['posts'])
