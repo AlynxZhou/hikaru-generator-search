@@ -20,10 +20,11 @@ module.exports = (hikaru) => {
 		const all = site['pages'].concat(site['posts'])
 		const getPath = getPathFn(site['siteConfig']['rootDir'])
 		for (let p of all) {
+			// Prefer to remove tags from HTML content.
 			search.push({
 				'title': `${p['title']}`,
 				'url': getPath(p['docPath']),
-				'content': p['text']
+				'content': p['content'].replace(/<\/?[^>]+>/gi, '')
 			})
 		}
 		return new File({
