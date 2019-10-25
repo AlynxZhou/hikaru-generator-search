@@ -28,9 +28,11 @@ module.exports = (hikaru) => {
       const search = {'data': []}
       const current = all.slice(i * length, (i + 1) * length)
       for (let p of current) {
+        const lang = p['language'] || site['siteConfig']['language']
+        const __ = hikaru.translator.getTranslateFn(lang)
         // Prefer to remove tags from HTML content.
         search['data'].push({
-          'title': `${p['title']}`,
+          'title': __(p['title']),
           'url': getPath(p['docPath']),
           'content': p['content'].replace(/<\/?[^>]+>/gi, '')
         })
