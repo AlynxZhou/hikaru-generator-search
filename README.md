@@ -23,3 +23,4 @@ then run this command to install it.
 ```
 $ npm i -s hikaru-generator-search
 ```
+If you want to skip some posts while generating search index, add `search: false` to its front-matter.

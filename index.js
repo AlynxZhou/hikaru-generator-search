@@ -21,7 +21,9 @@ module.exports = (hikaru) => {
     if (isString(path)) {
       path = [path]
     }
-    const all = site['pages'].concat(site['posts'])
+    const all = site['pages'].concat(site['posts']).filter((p) => {
+      return p['search'] !== false
+    })
     const length = Math.round(all.length / path.length)
     const result = []
     for (let i = 0; i < path.length; ++i) {
