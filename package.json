@@ -4,7 +4,8 @@
   "description": "Search generator plugin for Hikaru.",
   "main": "index.js",
   "scripts": {
-    "test": "standardx"
+    "test": "standardx",
+    "preversion": "npm test"
   },
   "repository": {
     "type": "git",
