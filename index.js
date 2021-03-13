@@ -1,10 +1,10 @@
 module.exports = (hikaru) => {
+  if (!hikaru.site["siteConfig"]["search"]["enable"]) {
+    return;
+  }
   const {getPathFn, isString} = hikaru.utils;
   const {File} = hikaru.types;
   hikaru.generator.register("searching result page", (site) => {
-    if (!site["siteConfig"]["search"]["enable"]) {
-      return;
-    }
     return new File({
       "docDir": site["siteConfig"]["docDir"],
       "docPath": site["siteConfig"]["search"]["page"] || "search/index.html",
@@ -13,9 +13,6 @@ module.exports = (hikaru) => {
     });
   });
   hikaru.generator.register("searching index json", (site) => {
-    if (!site["siteConfig"]["search"]["enable"]) {
-      return;
-    }
     const getPath = getPathFn(site["siteConfig"]["rootDir"]);
     let path = site["siteConfig"]["search"]["path"];
     if (isString(path)) {
