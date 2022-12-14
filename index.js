@@ -1,4 +1,4 @@
-module.exports = (hikaru) => {
+const generateSearch = (hikaru) => {
   if (!hikaru.site["siteConfig"]["search"]["enable"]) {
     return;
   }
@@ -45,3 +45,5 @@ module.exports = (hikaru) => {
     return result;
   });
 };
+
+export default generateSearch;
